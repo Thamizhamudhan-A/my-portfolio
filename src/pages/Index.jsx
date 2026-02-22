@@ -6,6 +6,8 @@ import ProjectsSection from "../components/ProjectsSection"
 import ExperienceSection from "../components/ExperienceSection"
 import ContactSection from "../components/ContactSection"
 import Footer from "../components/Footer"
+import EducationSection from "../components/EducationSection"
+import CertificationSection from "../components/CertificationSection"
 
 function Index() {
   return (
@@ -13,7 +15,9 @@ function Index() {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <EducationSection/>
       <SkillsSection />
+      <CertificationSection/>
       <ProjectsSection />
       <ExperienceSection />
       <ContactSection />

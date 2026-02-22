@@ -9,7 +9,9 @@ function Navbar() {
 
         <div className="hidden md:flex space-x-8 text-gray-300">
           <a href="#about" className="hover:text-blue-400">About</a>
+          <a href="#education" className="hover:text-blue-400">Education</a>
           <a href="#skills" className="hover:text-blue-400">Skills</a>
+          <a href="#certifications" className="hover:text-blue-400">Certifications</a>
           <a href="#projects" className="hover:text-blue-400">Projects</a>
           <a href="#experience" className="hover:text-blue-400">Experience</a>
           <a href="#contact" className="hover:text-blue-400">Contact</a>
