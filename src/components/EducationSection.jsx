@@ -26,28 +26,60 @@ const EducationSection = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-[#0a192f] text-gray-300">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-white border-b-4 border-blue-500 w-fit mx-auto pb-2">
+    <section
+      id="education"
+      className="py-24 bg-gradient-to-b from-slate-900 via-black to-slate-900 text-gray-300"
+    >
+      <div className="max-w-5xl mx-auto px-6">
+
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-emerald-400 to-cyan-500 bg-clip-text text-transparent">
           Education
         </h2>
-        
-        <div className="space-y-8">
-          {education.map((item, index) => (
-            <div key={index} className="relative pl-8 border-l-2 border-blue-500/30 hover:border-blue-500 transition-colors group">
-              <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 group-hover:scale-125 transition-transform shadow-[0_0_10px_#3b82f6]"></div>
-              <div className="bg-[#112240] p-6 rounded-lg shadow-xl hover:-translate-y-1 transition-transform">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                  <h3 className="text-xl font-bold text-white">{item.school}</h3>
-                  <span className="text-blue-400 font-mono text-sm">{item.year}</span>
+
+        {/* Timeline Line */}
+        <div className="relative">
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-emerald-400 to-cyan-500 opacity-30"></div>
+
+          <div className="space-y-16">
+            {education.map((item, index) => (
+              <div
+                key={index}
+                className={`relative flex flex-col md:flex-row ${
+                  index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+                }`}
+              >
+                {/* Card */}
+                <div className="md:w-1/2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl hover:-translate-y-2 transition duration-500">
+
+                  <span className="text-sm font-mono text-emerald-400 tracking-wider">
+                    {item.year}
+                  </span>
+
+                  <h3 className="text-xl font-bold text-white mt-2">
+                    {item.school}
+                  </h3>
+
+                  <p className="text-gray-400 mt-1 font-medium">
+                    {item.degree}
+                  </p>
+
+                  <div className="mt-3 inline-block px-3 py-1 text-xs bg-emerald-500/10 text-emerald-300 rounded-full">
+                    {item.score}
+                  </div>
+
+                  <p className="mt-4 text-sm leading-relaxed text-gray-400">
+                    {item.desc}
+                  </p>
                 </div>
-                <p className="text-gray-400 font-medium mb-2">{item.degree}</p>
-                <p className="text-sm text-blue-300 bg-blue-500/10 w-fit px-2 py-1 rounded mb-3">{item.score}</p>
-                <p className="text-sm leading-relaxed">{item.desc}</p>
+
+                {/* Dot */}
+                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-emerald-400 rounded-full shadow-[0_0_15px_#34d399]"></div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );
